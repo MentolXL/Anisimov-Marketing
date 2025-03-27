@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css2?family=Gidole&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(180deg, #050b16, #122a48);
+      color: white;
+
+      position: relative;
+    }
+
+    /* Add multiple smaller glowing blue effects */
+    body::before,
+    body::after,
+    .glow1,
+    .glow2,
+    .glow3,
+    .glow4 {
+      content: "";
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(
+        circle,
+        rgba(0, 89, 255, 0.5) 0%,
+        rgba(0, 89, 255, 0) 80%
+      );
+      filter: blur(100px);
+      z-index: -1;
+    }
+
+    body::before {
+      top: 10%;
+      left: 20%;
+    }
+
+    body::after {
+      bottom: 10%;
+      right: 20%;
+    }
+
+    .glow1 {
+      top: 30%;
+      left: 10%;
+    }
+
+    .glow2 {
+      top: 50%;
+      left: 40%;
+    }
+
+    .glow3 {
+      bottom: 30%;
+      right: 10%;
+    }
+
+    .glow4 {
+      bottom: 50%;
+      right: 40%;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      padding: 25px 45px;
+      border-bottom: 0.5px solid rgba(211, 211, 211, 0.171);
+    }
+
+    .apply-btn {
+      background-color: #ffffff;
+      color: rgba(1, 5, 14, 0.85);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      font-weight: 600;
+    }
+
+    .apply-btn:hover {
+      background-color: lightgrey;
+    }
+
+    .about-section {
+      text-align: center;
+      color: white;
+      padding: 120px 20px;
+      font-family: "Poppins", sans-serif;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(
+        180deg,
+        rgba(5, 11, 22, 0.9),
+        rgba(18, 42, 72, 0.8)
+      );
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .about-section h1 {
+      font-size: 3.5rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    .about-section .subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      opacity: 0.5 !important;
+      transform: translateY(-20px);
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    .about-section .description {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      max-width: 90%;
+      margin: 100px auto 30px;
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeIn 1.4s ease-out forwards;
+    }
+
+    .learn-more-btn {
+      background: linear-gradient(135deg, #00bcd4, #008cba);
+      color: white;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeIn 1.6s ease-out forwards;
+    }
+
+    .learn-more-btn:hover {
+      background: linear-gradient(135deg, #008cba, #005f73);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Glowing effect for the section */
+    .about-section::before,
+    .about-section::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(
+        circle,
+        rgba(0, 89, 255, 0.5) 0%,
+        rgba(0, 89, 255, 0) 80%
+      );
+      filter: blur(150px);
+      z-index: -1;
+      animation: pulse 6s infinite alternate;
+    }
+
+    .about-section::before {
+      top: 10%;
+      left: 20%;
+    }
+
+    .about-section::after {
+      bottom: 10%;
+      right: 20%;
+    }
+
+    /* Pulse animation for glowing effect */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+      100% {
+        transform: scale(1.2);
+        opacity: 0.3;
+      }
+    }
+
+    .stats-section {
+      text-align: center;
+      color: white;
+      padding: 100px 20px;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(
+        180deg,
+        rgba(5, 11, 22, 0.9),
+        rgba(18, 42, 72, 0.8)
+      );
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      margin-top: 50px;
+    }
+
+    .stats-section {
+      text-align: center;
+      color: white;
+      padding: 5cap 10px; /* Increased padding for more spaciousness */
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(
+        180deg,
+        rgba(5, 11, 22, 0.9),
+        rgba(18, 42, 72, 0.8)
+      );
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      margin-top: 50px;
+    }
+
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      gap: 70px; /* Increased gap between stats */
+      flex-wrap: wrap;
+      margin-bottom: 70px; /* Added more space below stats */
+      position: relative;
+    }
+
+    .stat-item {
+      text-align: center;
+      min-width: 150px;
+      position: relative;
+    }
+
+    .stat-item h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .stat-item p {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    /* Add dividers between stats */
+    .stat-item:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -25px;
+      transform: translateY(-50%);
+      height: 40px;
+      width: 1px;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .services-section {
+      margin-top: 150px; /* Space above the services section */
+      text-align: center;
+    }
+
+    .services-heading {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .services-description {
+      font-size: 1.05rem;
+      margin-bottom: 80px;
+      opacity: 0.8;
+      font-family: "Inter", sans-serif;
+      word-spacing: 2px;
+    }
+
+    .services-container {
+      display: flex;
+      justify-content: center;
+      gap: 200px; /* Space between service items */
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .service-item {
+      text-align: left;
+      max-width: 300px;
+    }
+
+    .service-header {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .service-header i {
+      font-size: 2rem;
+      color: #d62839;
+    }
+
+    .service-item h3 {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-family: "Inter", sans-serif;
+    }
+
+    .service-item ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .service-item ul li {
+      font-size: 1rem;
+      margin-bottom: 5px;
+      opacity: 0.8;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      text-align: center;
+      color: white;
+      padding: 80px 20px;
+      font-family: "Poppins", sans-serif;
+      background: transparent;
+      border-radius: 15px;
+      margin-top: 50px;
+    }
+
+    .cta-section h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .cta-section p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      opacity: 0.8;
+    }
+
+    .cta-section .apply-btn {
+      background-color: white;
+      color: #050b16;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .cta-section .apply-btn:hover {
+      background-color: lightgrey;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 0 20px;
+      font-family: "Poppins", sans-serif;
+      margin-top: 50px;
+      margin-bottom: 20px;
+    }
+
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-content p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .footer-icons a {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1.5rem;
+      margin-left: 10px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-icons a:hover {
+      color: white;
+    }
+
+    .service-header {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .service-header i {
+      font-size: 2rem;
+      color: #d62839;
+    }
+
+    /* Centered title for "Social Media Strategy" */
+    .service-title {
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-family: "Inter", sans-serif;
+    }
+
+    /* Reset Video Editing title to original left-aligned position */
+    .service-content h3 {
+      text-align: left;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-family: "Inter", sans-serif;
+    }
+
+    @media (max-width: 768px) {
+      .service-content,
+      .service-content h3 {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 0;
+        font-family: "Inter", sans-serif;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .footer-icons {
+        align-items: center;
+      }
+    }
